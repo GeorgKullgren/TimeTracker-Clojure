@@ -7,17 +7,17 @@
 
 (defn start-timer
   []
-  (clj-time.local/local-now))
+  (getTime))
 
 (defn time-interval
   [start-time stop-time]
-  (clj-time.core/interval start-time stop-time))
+  (clj-time.core/in-seconds (clj-time.core/interval start-time stop-time)))
   
   
 
 (defn stop-timer
   [start-time]
-  (time-interval start-time (clj-time.local/local-now)))
+  (time-interval start-time (getTime)))
   
 
 (stop-timer (start-timer))
