@@ -1,7 +1,10 @@
 (ns timetracker-clojure.core-test
-  (:require [clojure.test :refer :all]
-            [timetracker-clojure.core :refer :all]))
+  (:require [timetracker-clojure.core :refer :all])
+  (:use [midje.sweet]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(fact "Should return current time"
+      (start-timer) => 4
+      (provided
+       (getTime) => 4))
+
+
