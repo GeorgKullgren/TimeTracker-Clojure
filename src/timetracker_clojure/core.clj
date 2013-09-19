@@ -24,6 +24,9 @@
   [timer-name]
   (named-timer-record. timer-name (start-timer) 0))
 
+(defn stop-named-timer
+  [timer]
+  (stop-timer (:start-time timer)))
 
 (stop-timer (start-timer))
 
