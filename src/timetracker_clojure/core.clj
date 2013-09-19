@@ -18,11 +18,11 @@
   [start-time]
   (time-interval start-time (getTime)))
 
-(def named-timer-struct (create-struct :name :start-time :spent-time))
+(defrecord named-timer-record [name start-time spent-time])
   
 (defn create-named-timer
   [timer-name]
-  (def named-timer (struct named-timer-struct timer-name (start-timer) 0)))
+  (named-timer-record. timer-name (start-timer) 0))
 
 
 (stop-timer (start-timer))
